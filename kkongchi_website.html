@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>귀티 좔좔 꽁치네 집 🐾</title>
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creamBg: '#FDFBF7',
+            amberWarm: '#FFAE42',
+            peachPink: '#FF9E9E',
+            softGray: '#F2ECE4',
+            darkCharcoal: '#2D2D2D'
+          },
+          fontFamily: {
+            title: ['LINE Seed KR', 'NanumSquareRound', 'sans-serif'],
+            body: ['Pretendard', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LINESeedKR-Bd.woff2');
+    @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LINESeedKR-Rg.woff2');
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background-color: #FDFBF7;
+      color: #2D2D2D;
+      overflow-x: hidden;
+    }
+    
+    .font-title {
+      font-family: 'LINE Seed KR', sans-serif;
+    }
+
+    /* Soft transition for elements */
+    .transition-all-300 {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Soft shadow presets */
+    .soft-shadow {
+      box-shadow: 0 10px 30px -10px rgba(239, 142, 56, 0.15);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(239, 142, 56, 0.25);
+    }
+
+    /* Custom scrollbar for warm theme */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FDFBF7;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #FFAE42;
+      border-radius: 10px;
+      border: 3px solid #FDFBF7;
+    }
+  </style>
+</head>
+<body class="bg-creamBg selection:bg-peachPink selection:text-white">
+
+  <!-- Floating Audio Indicator & Navigation Header -->
+  <header class="fixed top-0 left-0 w-full z-40 bg-creamBg/80 backdrop-blur-md border-b border-softGray transition-all-300">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="flex items-center gap-2">
+        <span class="text-2xl font-title font-bold text-amberWarm">🐟 꽁치네집</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600">
+        <a href="#about" class="hover:text-amberWarm transition-colors">반전 프로필</a>
+        <a href="#health" class="hover:text-amberWarm transition-colors">건강 비결</a>
+        <a href="#gallery" class="hover:text-amberWarm transition-colors">허당 갤러리</a>
+        <a href="#guestbook" class="hover:text-amberWarm transition-colors font-title text-amberWarm bg-amberWarm/10 px-3 py-1.5 rounded-full hover:bg-amberWarm hover:text-white transition-all duration-300">🐾 충전 방명록</a>
+      </nav>
+
+      <!-- Interactive Sound Indicator Hook -->
+      <button onclick="playSqueak()" class="flex items-center gap-1.5 bg-peachPink/10 text-peachPink px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-peachPink hover:text-white transition-all-300">
+        <i class="fa-solid fa-volume-high animate-bounce"></i>
+        <span>삑삑이 탑재됨</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen pt-24 pb-16 flex flex-col justify-center items-center relative px-4 text-center overflow-hidden">
+    <!-- Background sparkles -->
+    <div class="absolute top-1/4 left-10 md:left-24 text-3xl opacity-30 select-none animate-pulse">✨</div>
+    <div class="absolute bottom-1/3 right-12 md:right-32 text-3xl opacity-30 select-none animate-pulse" style="animation-delay: 1s;">✨</div>
+    <div class="absolute top-1/3 right-16 text-4xl opacity-20 select-none animate-bounce" style="animation-duration: 4s;">🐾</div>
+    <div class="absolute bottom-1/4 left-16 text-4xl opacity-20 select-none animate-bounce" style="animation-duration: 5s;">🦴</div>
+
+    <div class="max-w-3xl mx-auto z-10">
+      <!-- Badge tag -->
+      <span class="inline-block bg-amberWarm/15 text-amberWarm border border-amberWarm/30 px-4 py-1.5 rounded-full text-sm font-bold tracking-wider mb-6 animate-fade-in">
+        👑 외모 서열 1위 말티즈
+      </span>
+      
+      <!-- Catchphrase Title -->
+      <h1 class="text-4xl md:text-6xl font-title font-bold text-darkCharcoal leading-tight mb-6">
+        귀티 좔좔 외모에<br>
+        그렇지 못한 <span class="text-amberWarm relative inline-block">허당미<span class="absolute left-0 bottom-1 w-full h-3 bg-peachPink/20 -z-10 rounded"></span></span>, 꽁치네 집!
+      </h1>
+      
+      <p class="text-gray-600 text-lg md:text-xl max-w-xl mx-auto leading-relaxed mb-8">
+        명문가 느낌의 우아한 털끝을 휘날리며 사료 그릇을 뒤엎는 반전 매력 노령견, 꽁치의 따뜻하고 우당탕탕한 실버 라이프에 오신 것을 환영합니다!
+      </p>
+
+      <!-- SVG Character (Kkongchi Interactive Face) -->
+      <div class="relative w-64 h-64 mx-auto mb-8 cursor-pointer group" onclick="touchNose(event)">
+        <!-- Speech Bubble triggerable on click -->
+        <div id="speechBubble" class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-white text-darkCharcoal text-sm font-semibold py-2.5 px-4 rounded-2xl shadow-xl border border-softGray opacity-0 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
+          킁킁.. 간식 냄새 나는데? 🦴
+        </div>
+
+        <!-- Glowing Effect Behind -->
+        <div class="absolute inset-0 bg-amberWarm/10 rounded-full blur-2xl scale-110 group-hover:bg-amberWarm/20 transition-all duration-300"></div>
+
+        <!-- Kkongchi Maltese Face SVG -->
+        <svg viewBox="0 0 200 200" class="w-full h-full relative z-10 transition-transform duration-300 hover:scale-105 active:scale-95 select-none">
+          <!-- Ears -->
+          <path d="M 30 60 C 15 50, 10 90, 25 110 C 35 120, 55 90, 45 70" fill="#FFFFFF" stroke="#E2D7C7" stroke-width="3" />
+          <path d="M 170 60 C 185 50, 190 90, 175 110 C 165 120, 145 90, 155 70" fill="#FFFFFF" stroke="#E2D7C7" stroke-width="3" />
+          
+          <!-- Maltese Hair top knot -->
+          <path d="M 75 45 C 85 20, 115 20, 125 45" fill="#FFFFFF" stroke="#E2D7C7" stroke-width="3" />
+          <!-- Cute Pink Ribbon on top -->
+          <path d="M 90 28 C 95 24, 105 24, 110 28 C 115 32, 112 36, 100 32 C 88 36, 85 32, 90 28" fill="#FF9E9E" />
+          <circle cx="100" cy="30" r="3" fill="#FFF" />
+
+          <!-- Main Head Circle -->
+          <circle cx="100" cy="100" r="65" fill="#FFFFFF" stroke="#E5E0D8" stroke-width="4" />
+          
+          <!-- Eyes -->
+          <circle cx="70" cy="95" r="8" fill="#2D2D2D" />
+          <circle cx="68" cy="93" r="3" fill="#FFFFFF" /> <!-- Sparkle -->
+          <circle cx="130" cy="95" r="8" fill="#2D2D2D" />
+          <circle cx="128" cy="93" r="3" fill="#FFFFFF" /> <!-- Sparkle -->
+          
+          <!-- Cheeks -->
+          <ellipse cx="60" cy="112" rx="9" ry="6" fill="#FF9E9E" fill-opacity="0.5" />
+          <ellipse cx="140" cy="112" rx="9" ry="6" fill="#FF9E9E" fill-opacity="0.5" />
+
+          <!-- Snout Background (Whiteness) -->
+          <ellipse cx="100" cy="118" rx="22" ry="15" fill="#FBFBFB" stroke="#E9E4DB" stroke-width="1.5" />
+
+          <!-- Nose (Click target wrapper for pure CSS hover indicator) -->
+          <path id="kkongchiNose" d="M 92 110 C 92 105, 108 105, 108 110 C 108 115, 92 115, 92 110" fill="#1C1C1C" class="cursor-pointer hover:fill-amberWarm transition-colors duration-200" />
+          
+          <!-- Mouth -->
+          <path id="kkongchiMouth" d="M 94 118 Q 100 123 100 118 Q 100 123 106 118" fill="none" stroke="#2D2D2D" stroke-width="2.5" stroke-linecap="round" />
+          <!-- Cute tongue out slightly -->
+          <path d="M 97 121 Q 100 130 103 121 Z" fill="#FF9E9E" />
+        </svg>
+
+        <p class="text-xs text-gray-400 font-semibold mt-2 tracking-wide group-hover:text-amberWarm transition-colors">
+          👇 꽁치의 촉촉한 코를 한번 찔러보세요 (삑삑!)
+        </p>
+      </div>
+
+      <!-- Quick Scroll Indicator / CTA -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#about" class="w-full sm:w-auto bg-amberWarm hover:bg-amberWarm/90 text-white font-title font-bold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all-300">
+          실버 라이프 엿보기 🐾
+        </a>
+        <a href="#guestbook" class="w-full sm:w-auto bg-white border-2 border-softGray hover:border-amberWarm text-darkCharcoal font-title font-bold px-8 py-4 rounded-2xl transition-all-300">
+          꽁치에 한마디 남기기
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Reverse Profile Intro -->
+  <section id="about" class="py-24 bg-white border-y border-softGray/50 relative">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-peachPink font-bold text-sm tracking-widest uppercase">01 / REVERSE PROFILE</span>
+        <h2 class="text-3xl md:text-4xl font-title font-bold text-darkCharcoal mt-2">반전 매력 프로필</h2>
+        <p class="text-gray-500 mt-3 max-w-xl mx-auto">
+          완벽해 보이는 왕실 혈통 비주얼 아래, 침을 흘리며 자거나 꼬리를 잡으려 뱅글뱅글 도는 대반전 뒤태가 기다립니다.
+        </p>
+      </div>
+
+      <!-- Main Profile Comparison Display -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        
+        <!-- Left: Noble Maltese (겉모습) -->
+        <div class="bg-creamBg border border-softGray p-8 rounded-3xl soft-shadow transition-all-300 hover:border-amberWarm flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <span class="text-xs font-bold tracking-wider bg-amberWarm/10 text-amberWarm py-1 px-3 rounded-full">VISUAL & LINEAGE</span>
+              <span class="text-2xl">✨</span>
+            </div>
+            
+            <h3 class="text-2xl font-title font-bold text-darkCharcoal mb-4">겉모습: 영국 황실 귀공자</h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              투명하리만큼 새하얀 모질과 콧날, 살짝 처진 눈꼬리로 우수를 자아내는 클래식한 귀족견 분위기를 자랑합니다. 고요하게 서 있을 때는 마치 동화 속에서 방금 튀어나온 유니콘 같은 신비로움을 선사합니다.
+            </p>
+
+            <ul class="space-y-3.5">
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <span class="flex items-center justify-center w-6 h-6 rounded-full bg-amberWarm/10 text-amberWarm text-xs"><i class="fa-solid fa-check"></i></span>
+                <span>모질 등급: 최상급 실크 슬라이딩 촉감</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <span class="flex items-center justify-center w-6 h-6 rounded-full bg-amberWarm/10 text-amberWarm text-xs"><i class="fa-solid fa-check"></i></span>
+                <span>얼굴 대칭: 완벽한 둥근 헤어 프레임 소유</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <span class="flex items-center justify-center w-6 h-6 rounded-full bg-amberWarm/10 text-amberWarm text-xs"><i class="fa-solid fa-check"></i></span>
+                <span>소질: 가만히 있어도 광고 모델급 아우라</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 border-t border-softGray pt-6 flex items-center gap-4">
+            <span class="text-4xl">🤴</span>
+            <div>
+              <p class="text-xs text-gray-400 font-semibold">품격 한마디</p>
+              <p class="text-sm font-semibold text-darkCharcoal">"귀티가 흐른다는 건 이런 것이지."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Clumsy Actual Behavior (허당미) -->
+        <div class="bg-peachPink/5 border border-peachPink/20 p-8 rounded-3xl soft-shadow transition-all-300 hover:border-peachPink flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-6">
+              <span class="text-xs font-bold tracking-wider bg-peachPink/15 text-peachPink py-1 px-3 rounded-full">REALITY & HUMOR</span>
+              <span class="text-2xl">🤪</span>
+            </div>
+            
+            <h3 class="text-2xl font-title font-bold text-darkCharcoal mb-4">본체: 귀여운 동네 바보 형</h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              누가 먼저 쓰다듬어 주면 입을 반쯤 벌리고 침을 쪼르르 흘립니다. 산책하다가 자기 다리에 걸려 우당탕 넘어지고는 아무 일도 없었다는 듯 엉뚱한 먼 산을 바라보는 것이 특기입니다.
+            </p>
+
+            <ul class="space-y-3.5">
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <span class="flex items-center justify-center w-6 h-6 rounded-full bg-peachPink/10 text-peachPink text-xs"><i class="fa-solid fa-star"></i></span>
+                <span>특이사항: 방금 자다 깨서 양 갈래로 갈라진 머리털</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <span class="flex items-center justify-center w-6 h-6 rounded-full bg-peachPink/10 text-peachPink text-xs"><i class="fa-solid fa-star"></i></span>
+                <span>돌발 행동: 벽보고 깜짝 놀라 뒤로 텀블링하기</span>
+              </li>
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <span class="flex items-center justify-center w-6 h-6 rounded-full bg-peachPink/10 text-peachPink text-xs"><i class="fa-solid fa-star"></i></span>
+                <span>취향: 이상하게 비싼 개껌보다 빈 페트병을 사랑함</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 border-t border-peachPink/20 pt-6 flex items-center gap-4">
+            <span class="text-4xl">🤪</span>
+            <div>
+              <p class="text-xs text-peachPink font-semibold">허당 한마디</p>
+              <p class="text-sm font-semibold text-darkCharcoal">"내 꼬리가 날 미행하는 것 같아!"</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Healthy Silver Life (건강 비결) -->
+  <section id="health" class="py-24 bg-creamBg">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-amberWarm font-bold text-sm tracking-widest uppercase">02 / HEALTHY SILVER LIFE</span>
+        <h2 class="text-3xl md:text-4xl font-title font-bold text-darkCharcoal mt-2">할배견 꽁치의 생존 비밀 🦴</h2>
+        <p class="text-gray-500 mt-3 max-w-xl mx-auto">
+          "노령견이라고 집에서 누워만 있다뇨?" 청년 강아지 뺨치는 쾌활함과 튼튼한 관절을 유지하는 꽁치만의 3가지 비결을 대공개합니다.
+        </p>
+      </div>
+
+      <!-- Secret Cards Matrix -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- Card 1 -->
+        <div class="bg-white p-8 rounded-3xl border border-softGray card-hover transition-all-300">
+          <div class="w-14 h-14 rounded-2xl bg-amberWarm/10 text-amberWarm flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-bowl-food"></i>
+          </div>
+          <h3 class="text-xl font-title font-bold text-darkCharcoal mb-3">1단계: 황태 가루 듬뿍 사료</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            나이가 들수록 잃기 쉬운 입맛을 위해 저염 처리한 황태 가루를 사료에 토핑해 줍니다. 꽁치는 이 냄새를 맡으면 0.1초 만에 공중 부양 점프를 합니다.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white p-8 rounded-3xl border border-softGray card-hover transition-all-300">
+          <div class="w-14 h-14 rounded-2xl bg-peachPink/10 text-peachPink flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-shoe-prints"></i>
+          </div>
+          <h3 class="text-xl font-title font-bold text-darkCharcoal mb-3">2단계: 냄새 수집 마스터 산책</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            무조건 뛰는 것이 아니라 천천히 잔디밭을 정찰하며 뇌를 자극하는 향기를 수집합니다. 꽁치의 고차원적 치매 예방 비법이기도 합니다.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white p-8 rounded-3xl border border-softGray card-hover transition-all-300">
+          <div class="w-14 h-14 rounded-2xl bg-amberWarm/10 text-amberWarm flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-bed"></i>
+          </div>
+          <h3 class="text-xl font-title font-bold text-darkCharcoal mb-3">3단계: 암전 속 고품격 숙면</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            하루 16시간 이상, 반드시 가장 푹신한 아빠 소파 한가운데나 이불더미 정중앙에 침을 적시며 최고의 숙면 꿀잠을 취해 충전합니다.
+          </p>
+        </div>
+      </div>
+
+      <!-- Live Dynamic Interactive Energy Meter -->
+      <div class="bg-white border border-softGray rounded-3xl p-8 max-w-2xl mx-auto soft-shadow text-center">
+        <h4 class="font-title font-bold text-lg text-darkCharcoal mb-2">⚡ 꽁치 시간대별 에너지 상태 측정기</h4>
+        <p class="text-xs text-gray-400 mb-6">시간별로 꽁치의 활력 지수가 어떻게 요동치는지 확인해보세요!</p>
+
+        <div class="flex flex-wrap justify-center gap-2 mb-6" id="timeButtonContainer">
+          <button onclick="updateEnergy(8, 120, '아침 배변 직후 폭발기', '💩 쾌변의 기쁨을 온몸으로 승화하며 거실을 폭주 비행 중입니다!')" class="time-btn bg-amberWarm text-white px-4 py-2 rounded-xl text-xs font-bold transition-all">08:00 (아침)</button>
+          <button onclick="updateEnergy(14, 15, '기나긴 기면증 상태', '💤 식사 후 소파 쿠션 모퉁이에 스며들어 흐느끼는 듯 자고 있습니다.')" class="time-btn bg-softGray hover:bg-amberWarm/20 px-4 py-2 rounded-xl text-xs font-bold transition-all">14:00 (낮)</button>
+          <button onclick="updateEnergy(19, 180, '저녁 산책 워밍업', '🏃‍♂️ 하네스를 꺼내는 소리가 나자마자 탭댄스를 추며 준비 완료!')" class="time-btn bg-softGray hover:bg-amberWarm/20 px-4 py-2 rounded-xl text-xs font-bold transition-all">19:00 (저녁)</button>
+          <button onclick="updateEnergy(23, 5, '완전 방전의 밤', '🛌 온 몸의 뼈가 녹은 듯이 뻗어서 세상 달게 누워 계십니다.')" class="time-btn bg-softGray hover:bg-amberWarm/20 px-4 py-2 rounded-xl text-xs font-bold transition-all">23:00 (밤)</button>
+        </div>
+
+        <div class="space-y-4">
+          <div class="flex justify-between items-center text-sm font-semibold">
+            <span class="text-gray-500">현재 활력도</span>
+            <span id="energyPercent" class="text-amberWarm font-title text-xl font-bold">120%</span>
+          </div>
+          <!-- Animated Progress bar container -->
+          <div class="w-full bg-softGray h-4 rounded-full overflow-hidden">
+            <div id="energyBar" class="bg-gradient-to-r from-amberWarm to-peachPink h-full rounded-full transition-all duration-500" style="width: 120%;"></div>
+          </div>
+          <div class="p-4 bg-creamBg rounded-2xl text-sm border border-softGray mt-2 text-left">
+            <p class="font-bold text-amberWarm text-xs uppercase mb-1">상태 정보</p>
+            <p id="energyDesc" class="text-gray-700 leading-relaxed font-semibold">💩 쾌변의 기쁨을 온몸으로 승화하며 거실을 폭주 비행 중입니다!</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Gallery of Clumsiness (에피소드 및 갤러리) -->
+  <section id="gallery" class="py-24 bg-white border-y border-softGray/50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-peachPink font-bold text-sm tracking-widest uppercase">03 / MOMENT GALLERY</span>
+        <h2 class="text-3xl md:text-4xl font-title font-bold text-darkCharcoal mt-2">무해한 순간 갤러리 📸</h2>
+        <p class="text-gray-500 mt-3 max-w-xl mx-auto">
+          랜선 집사들의 수명을 연장시켜 주는 최고의 귀여움. 일상의 사소하고 엉뚱한 한 컷들을 구경해 보세요.
+        </p>
+      </div>
+
+      <!-- EPISODES GRID with Interactive Filter -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Post 1 -->
+        <div class="bg-creamBg border border-softGray rounded-3xl overflow-hidden soft-shadow transition-all-300 hover:-translate-y-2">
+          <!-- Styled Decorative Picture Canvas -->
+          <div class="bg-amberWarm/5 h-64 flex flex-col items-center justify-center relative p-6 border-b border-softGray text-center">
+            <span class="text-6xl mb-4 select-none">🐾</span>
+            <p class="font-title font-bold text-lg text-darkCharcoal">"내 다리 어디 갔냐멍"</p>
+            <span class="absolute top-4 right-4 bg-amberWarm text-white text-[10px] px-2 py-0.5 rounded-md font-bold font-title">BEST</span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-bold text-amberWarm tracking-wider block mb-2">#실버허당미</span>
+            <h4 class="font-title font-bold text-lg text-darkCharcoal mb-2">양말 한 짝의 습격</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              발을 닦은 후 씌워준 소형 수면 양말 한 짝이 어색해 한 발자국도 걷지 못하고 석고상처럼 15분 동안 가만히 서 있던 날.
+            </p>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="bg-creamBg border border-softGray rounded-3xl overflow-hidden soft-shadow transition-all-300 hover:-translate-y-2">
+          <div class="bg-peachPink/5 h-64 flex flex-col items-center justify-center relative p-6 border-b border-softGray text-center">
+            <span class="text-6xl mb-4 select-none">🍉</span>
+            <p class="font-title font-bold text-lg text-darkCharcoal">"조금만 더 늘려봐라멍"</p>
+            <span class="absolute top-4 right-4 bg-peachPink text-white text-[10px] px-2 py-0.5 rounded-md font-bold font-title">NEW</span>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-bold text-peachPink tracking-wider block mb-2">#과일킬러</span>
+            <h4 class="font-title font-bold text-lg text-darkCharcoal mb-2">수박 앞 혀 길이 최대치</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              수박을 먹던 가족들 앞, 기어코 한 입 먹겠다는 집념으로 평소의 3배 가까이 길어진 혀를 내미는 꽁치의 놀라운 물리 법칙 파괴 현장.
+            </p>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="bg-creamBg border border-softGray rounded-3xl overflow-hidden soft-shadow transition-all-300 hover:-translate-y-2">
+          <div class="bg-amberWarm/5 h-64 flex flex-col items-center justify-center relative p-6 border-b border-softGray text-center">
+            <span class="text-6xl mb-4 select-none">📦</span>
+            <p class="font-title font-bold text-lg text-darkCharcoal">"이곳이 내 우주선이다"</p>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-bold text-amberWarm tracking-wider block mb-2">#자기만족</span>
+            <h4 class="font-title font-bold text-lg text-darkCharcoal mb-2">쿠팡 박스는 못 참지</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              비싼 프리미엄 마약방석은 쳐다보지도 않더니 새로 배달 온 택배 빈 상자에 구겨지듯 들어가 고고한 눈빛을 쏘아보내고 있습니다.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Outro & Guestbook (꽁치 충전소) -->
+  <section id="guestbook" class="py-24 bg-creamBg relative">
+    <div class="max-w-4xl mx-auto px-4">
+      
+      <!-- Outro Segment: Warm Greeting -->
+      <div class="text-center mb-16">
+        <span class="text-amberWarm font-bold text-2xl">🐕🔋</span>
+        <h2 class="text-3xl md:text-4xl font-title font-bold text-darkCharcoal mt-4">꽁치 충전 완료!</h2>
+        <p class="text-gray-600 mt-3 max-w-xl mx-auto leading-relaxed">
+          지친 하루의 무거운 짐들은 꽁치의 귀엽고 멍청한 미소 뒤로 다 날려 보내셨기를 바랍니다. 가시기 전 따뜻한 응원의 한마디나, 여러분의 반려동물 이야기를 자랑하고 발도장을 꾹 찍어가세요!
+        </p>
+      </div>
+
+      <!-- Interactive Guestbook Container -->
+      <div class="bg-white border border-softGray rounded-3xl p-6 md:p-10 soft-shadow">
+        <h3 class="font-title font-bold text-xl text-darkCharcoal mb-6 flex items-center gap-2">
+          <span>🐾 랜선 이모삼촌들의 발도장 방명록</span>
+          <span class="text-xs bg-peachPink/15 text-peachPink font-bold px-2 py-1 rounded-md" id="guestbookCount">3개 기록됨</span>
+        </h3>
+
+        <!-- Guestbook Input Form -->
+        <form id="commentForm" onsubmit="addComment(event)" class="space-y-4 mb-10">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-2">닉네임</label>
+              <input type="text" id="author" required placeholder="예) 강남초코누나" class="w-full bg-creamBg border border-softGray rounded-xl py-3 px-4 focus:ring-2 focus:ring-amberWarm focus:outline-none transition-all-300">
+            </div>
+            
+            <div>
+              <label class="block text-xs font-bold text-gray-500 mb-2">참석 칭호 선택</label>
+              <select id="badge" class="w-full bg-creamBg border border-softGray rounded-xl py-3 px-4 focus:ring-2 focus:ring-amberWarm focus:outline-none transition-all-300">
+                <option value="🐟 꽁치단">🐟 꽁치단 (공식 팬클럽)</option>
+                <option value="🐾 랜선집사">🐾 랜선집사 (무한 쓰담러)</option>
+                <option value="🦴 개껌기부자">🦴 개껌기부자 (영양지원군)</option>
+                <option value="✨ 구경꾼">✨ 구경꾼 (우연한 힐러)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-gray-500 mb-2">메시지</label>
+            <textarea id="message" required rows="3" placeholder="꽁치에게 남기고 싶은 귀여운 주접 글을 써주세요!" class="w-full bg-creamBg border border-softGray rounded-xl py-3 px-4 focus:ring-2 focus:ring-amberWarm focus:outline-none transition-all-300 resize-none"></textarea>
+          </div>
+
+          <div class="flex justify-end">
+            <button type="submit" class="bg-amberWarm hover:bg-amberWarm/90 text-white font-title font-bold py-3 px-8 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] shadow-md flex items-center gap-2">
+              <i class="fa-solid fa-paw"></i>
+              <span>방명록 남기기</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Message List Container -->
+        <div class="space-y-4 max-h-96 overflow-y-auto pr-2" id="commentList">
+          <!-- Prefilled comments are dynamically loaded via JavaScript -->
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-darkCharcoal text-softGray py-12">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <div class="flex justify-center items-center gap-2 mb-6">
+        <span class="text-xl font-title font-bold text-amberWarm">🐟 꽁치네집</span>
+        <span class="text-xs text-gray-400">|</span>
+        <span class="text-xs text-gray-400">건강한 실버 라이프 아카이브</span>
+      </div>
+      
+      <p class="text-xs text-gray-500 max-w-md mx-auto leading-relaxed mb-6">
+        이 웹사이트는 반전 매력 노령견 '꽁치'를 지지하고 사랑하는 랜선 집사들을 위한 비상업적 공간입니다. 꽁치의 모든 엉뚱함은 무해한 웃음과 힐링을 선사합니다.
+      </p>
+
+      <div class="flex justify-center gap-6 text-sm text-gray-400 mb-6">
+        <a href="#about" class="hover:text-amberWarm transition-colors">프로필</a>
+        <a href="#health" class="hover:text-amberWarm transition-colors">건강 비결</a>
+        <a href="#gallery" class="hover:text-amberWarm transition-colors">에피소드</a>
+        <a href="#guestbook" class="hover:text-amberWarm transition-colors">방명록</a>
+      </div>
+
+      <p class="text-xs text-gray-600">
+        &copy; 2026 Kkongchi's Home. Crafted with Love. All clumsy moments reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Squeak Toast Notification (Custom Notification System) -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 bg-amberWarm text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none z-50">
+    <span class="text-xl">🦴</span>
+    <span class="text-sm font-semibold" id="toastMessage">삐삑! 꽁치의 활력을 올렸습니다.</span>
+  </div>
+
+  <!-- JavaScript Behavior & State Controls -->
+  <script>
+    // 1. Initial State / Preloaded Guestbook
+    const defaultComments = [
+      {
+        author: "성수동집사",
+        badge: "🐾 랜선집사",
+        message: "꽁치야 우리 말티즈 애기랑 하루 일과가 너무 똑같다ㅠㅠ 세상 모든 댕댕이들 안 아프고 건강하게 나이 들었으면 좋겠어! 아기 때 사진도 많이 보여줘 꽁치!",
+        date: "2026.07.08"
+      },
+      {
+        author: "개껌마왕",
+        badge: " Bones 🦴 개껌기부자",
+        message: "꽁치 콧구멍 찔렀더니 삑 소리 나는거 진짜 심쿵이네요ㅋㅋ 귀티 좔좔 흐르는데 침 흘리는 반전 엄청 매력적이에요!",
+        date: "2026.07.07"
+      },
+      {
+        author: "포근포근크림",
+        badge: "🐟 꽁치단",
+        message: "따뜻한 크림빛 웹사이트 분위기 너무 좋아요~ 꽁치 하루 일과표 보면서 저도 힐링하고 갑니다. 꽁치야 언제나 건강하고 행복해!",
+        date: "2026.07.05"
+      }
+    ];
+
+    // Load Guestbook Comments from LocalStorage or Fallback
+    let comments = [];
+    try {
+      const stored = localStorage.getItem('kkongchi_comments');
+      if (stored) {
+        comments = JSON.parse(stored);
+      } else {
+        comments = [...defaultComments];
+        localStorage.setItem('kkongchi_comments', JSON.stringify(comments));
+      }
+    } catch (e) {
+      comments = [...defaultComments];
+    }
+
+    // Initialize Page Content
+    window.onload = function() {
+      renderComments();
+    };
+
+    // 2. Interactive Squeak Sounds (Web Audio API)
+    // Plays a playful dog toy squeak sound purely generated programmatically!
+    function playSqueak() {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        const ctx = new AudioContext();
+        
+        // Squeak Part 1: Quick pitch slide up (high squeaky sound)
+        const osc1 = ctx.createOscillator();
+        const gain1 = ctx.createGain();
+        osc1.type = 'triangle';
+        osc1.frequency.setValueAtTime(900, ctx.currentTime);
+        osc1.frequency.exponentialRampToValueAtTime(1600, ctx.currentTime + 0.12);
+        
+        gain1.gain.setValueAtTime(0.06, ctx.currentTime);
+        gain1.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
+        
+        osc1.connect(gain1);
+        gain1.connect(ctx.destination);
+        osc1.start();
+        osc1.stop(ctx.currentTime + 0.12);
+
+        // Squeak Part 2: Quick release squeak (when releasing the toy)
+        setTimeout(() => {
+          const osc2 = ctx.createOscillator();
+          const gain2 = ctx.createGain();
+          osc2.type = 'triangle';
+          osc2.frequency.setValueAtTime(1400, ctx.currentTime);
+          osc2.frequency.exponentialRampToValueAtTime(1100, ctx.currentTime + 0.08);
+          
+          gain2.gain.setValueAtTime(0.04, ctx.currentTime);
+          gain2.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.08);
+          
+          osc2.connect(gain2);
+          gain2.connect(ctx.destination);
+          osc2.start();
+          osc2.stop(ctx.currentTime + 0.08);
+        }, 110);
+
+      } catch (e) {
+        console.log("Audio contextual autoplay block / unsupported.");
+      }
+    }
+
+    // 3. Interactive Click Action on Kkongchi's Nose
+    const kkongchiPhrases = [
+      "컹! 간식 주는 줄 알고 놀랐자나! 🦴",
+      "킁킁.. 어디서 맛있는 냄새 나는데? 🐟",
+      "꾸벅.. 건드리지 마라 나 지금 숙면중이닷.. 💤",
+      "누구야! 내 촉촉한 블랙베리 코를 누른 게! 🖤",
+      "와랄랄라! 반가워 랜선 이모 삼촌! 🐾",
+      "삑삑이 최고! 산책 최고! 고기 최고! ✨"
+    ];
+
+    function touchNose(event) {
+      playSqueak();
+      
+      // Select random funny phrase
+      const bubble = document.getElementById('speechBubble');
+      const randomPhrase = kkongchiPhrases[Math.floor(Math.random() * kkongchiPhrases.length)];
+      bubble.innerText = randomPhrase;
+      
+      // Animate bubble fade and scaling
+      bubble.style.opacity = '1';
+      bubble.style.transform = 'translateX(-50%) scale(1.05)';
+      
+      setTimeout(() => {
+        bubble.style.transform = 'translateX(-50%) scale(1)';
+      }, 150);
+
+      // Dismiss after 2.5 seconds
+      setTimeout(() => {
+        bubble.style.opacity = '0';
+      }, 2500);
+
+      // Trigger custom cute toast
+      showToast("🐾 삑삑! 꽁치가 꼬리를 살랑살랑 흔듭니다.");
+    }
+
+    // 4. Time/Energy Meter Interactive Actions
+    function updateEnergy(time, value, title, description) {
+      // Update UI texts
+      document.getElementById('energyPercent').innerText = value + '%';
+      document.getElementById('energyDesc').innerText = description;
+      
+      // Update progress bar length
+      const bar = document.getElementById('energyBar');
+      bar.style.width = Math.min(value, 100) + '%';
+      
+      // Highlight the active button & reset others
+      const buttons = document.querySelectorAll('#timeButtonContainer button');
+      buttons.forEach(btn => {
+        if(btn.innerText.includes(time + ':00')) {
+          btn.className = "time-btn bg-amberWarm text-white px-4 py-2 rounded-xl text-xs font-bold transition-all";
+        } else {
+          btn.className = "time-btn bg-softGray hover:bg-amberWarm/20 px-4 py-2 rounded-xl text-xs font-bold transition-all";
+        }
+      });
+
+      showToast(`🕒 ${time}시의 상태로 변경되었습니다!`);
+    }
+
+    // 5. Guestbook Feature Impl
+    function renderComments() {
+      const listContainer = document.getElementById('commentList');
+      const countBadge = document.getElementById('guestbookCount');
+      
+      listContainer.innerHTML = '';
+      countBadge.innerText = `${comments.length}개 기록됨`;
+
+      // Render reversed to show latest first
+      [...comments].reverse().forEach(comment => {
+        const commentCard = document.createElement('div');
+        commentCard.className = "bg-creamBg p-5 rounded-2xl border border-softGray flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-amberWarm transition-all-300";
+        
+        commentCard.innerHTML = `
+          <div class="space-y-1.5 flex-1">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="font-title font-bold text-darkCharcoal text-sm">${escapeHTML(comment.author)}</span>
+              <span class="text-[10px] font-bold bg-amberWarm/10 text-amberWarm px-2 py-0.5 rounded-md">${escapeHTML(comment.badge)}</span>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed">${escapeHTML(comment.message)}</p>
+          </div>
+          <span class="text-xs text-gray-400 whitespace-nowrap self-end md:self-center">${comment.date}</span>
+        `;
+        listContainer.appendChild(commentCard);
+      });
+    }
+
+    function addComment(e) {
+      e.preventDefault();
+      
+      const authorInput = document.getElementById('author');
+      const badgeSelect = document.getElementById('badge');
+      const messageInput = document.getElementById('message');
+
+      const today = new Date();
+      const formattedDate = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
+
+      const newComment = {
+        author: authorInput.value.trim(),
+        badge: badgeSelect.value,
+        message: messageInput.value.trim(),
+        date: formattedDate
+      };
+
+      comments.push(newComment);
+      
+      // Save updated comments list
+      try {
+        localStorage.setItem('kkongchi_comments', JSON.stringify(comments));
+      } catch (err) {
+        console.error("Local Storage quota exceeded / disabled.");
+      }
+
+      // Refresh UI
+      renderComments();
+
+      // Clear input fields
+      authorInput.value = '';
+      messageInput.value = '';
+
+      // Toast notification
+      showToast("🎉 방명록이 성공적으로 등록되었습니다!");
+    }
+
+    // 6. Toast & Safety Helper Functions
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      const msgSpan = document.getElementById('toastMessage');
+      
+      msgSpan.innerText = message;
+      toast.style.transform = 'translateY(0)';
+      toast.style.opacity = '1';
+
+      setTimeout(() => {
+        toast.style.transform = 'translateY(24px)';
+        toast.style.opacity = '0';
+      }, 3000);
+    }
+
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          "'": '&#39;',
+          '"': '&quot;'
+        }[tag] || tag)
+      );
+    }
+  </script>
+</body>
+</html>
